@@ -34,7 +34,9 @@ teacher = "deepset/robert-large-squad2"
 ``` 
 
 ## Distillation
-This model was distilled using the approach described in [this paper](https://arxiv.org/pdf/1909.10351.pdf).
+This model was distilled using the TinyBERT approach described in [this paper](https://arxiv.org/pdf/1909.10351.pdf) and implemented in [haystack](https://github.com/deepset-ai/haystack).
+Firstly, we have performed intermediate layer distillation with roberta-base as the teacher which resulted in deepset/tinyroberta-6l-768d.
+Secondly, we have performed task-specific distillation with deepset/roberta-base-squad2 as the teacher for further intermediate layer distillation on an augmented version of SQuADv2 and then with deepset/roberta-large-squad2 as the teacher for prediction layer distillation. 
 
 ## Performance
 Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/).
