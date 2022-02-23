@@ -37,16 +37,19 @@ teacher = "deepset/robert-large-squad2"
 Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/).
 
 ```
-"exact": 79.34810073275499,
-"f1": 82.26435201691056,
+"exact": 78.19422218478901,
+"f1": 81.41848853895601,
   
 "total": 11873,
 "HasAns_exact": 76.51821862348179,
-"HasAns_f1": 82.97599770968706,
-"HasAns_total": 5928,
 "NoAns_exact": 79.86543313709,
 "NoAns_f1": 79.86543313709,
 "NoAns_total": 5945,
+  
+"best_exact": 79.34810073275499,
+"best_exact_thresh": -4.051729202270508,
+"best_f1": 82.26435201691056,
+"best_f1_thresh": -4.051729202270508
 ```
 
 ## Usage
