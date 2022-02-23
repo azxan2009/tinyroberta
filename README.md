@@ -33,6 +33,9 @@ temperature = 1.5
 teacher = "deepset/robert-large-squad2"
 ``` 
 
+## Distillation
+This model was distilled using the approach described in [this paper](https://arxiv.org/pdf/1909.10351.pdf).
+
 ## Performance
 Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/).
 
