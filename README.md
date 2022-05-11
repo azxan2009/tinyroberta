@@ -107,7 +107,7 @@ Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://works
 
 
 Some of our other work: 
-- [Distilled roberta-base-squad2 (aka "tinyroberta-squad2")]([https://huggingface.co/deepset/tinyroberta-squad2)
+- [roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2)
 - [German BERT (aka "bert-base-german-cased")](https://deepset.ai/german-bert)
 - [GermanQuAD and GermanDPR datasets and models (aka "gelectra-base-germanquad", "gbert-base-germandpr")](https://deepset.ai/germanquad)
 
