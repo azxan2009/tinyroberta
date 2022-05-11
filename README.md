@@ -7,6 +7,8 @@ license: cc-by-4.0
 
 # tinyroberta-squad2
 
+This is the *distilled* version of the [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) model. This model has a comparable prediction quality and runs at twice the speed of the base model.
+
 ## Overview
 **Language model:** tinyroberta-squad2  
 **Language:** English  
@@ -38,23 +40,16 @@ This model was distilled using the TinyBERT approach described in [this paper](h
 Firstly, we have performed intermediate layer distillation with roberta-base as the teacher which resulted in [deepset/tinyroberta-6l-768d](https://huggingface.co/deepset/tinyroberta-6l-768d).
 Secondly, we have performed task-specific distillation with [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) as the teacher for further intermediate layer distillation on an augmented version of SQuADv2 and then with [deepset/roberta-large-squad2](https://huggingface.co/deepset/roberta-large-squad2) as the teacher for prediction layer distillation. 
 
-## Performance
-Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/).
-
-```
-"exact": 78.69114798281817,
-"f1": 81.9198998536977,
-
-"total": 11873,
-"HasAns_exact": 76.19770580296895,
-"HasAns_f1": 82.66446878592329,
-"HasAns_total": 5928,
-"NoAns_exact": 81.17746005046257,
-"NoAns_f1": 81.17746005046257,
-"NoAns_total": 5945
-```
-
 ## Usage
+
+### In Haystack
+Haystack is an NLP framework by deepset. You can use this model in a Hasytack pipeline to do question answering at scale (over many documents). To load the model in [Haystack](https://github.com/deepset-ai/haystack/):
+
+```python
+reader = FARMReader(model_name_or_path="deepset/tinyroberta-squad2")
+# or 
+reader = TransformersReader(model_name_or_path="deepset/tinyroberta-squad2")
+```
 
 ### In Transformers
 ```python
@@ -75,54 +70,53 @@ model = AutoModelForQuestionAnswering.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 ```
 
-### In FARM
+## Performance
+Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/).
 
-```python
-from farm.modeling.adaptive_model import AdaptiveModel
-from farm.modeling.tokenization import Tokenizer
-from farm.infer import Inferencer
-
-model_name = "deepset/tinyroberta-squad2"
-
-# a) Get predictions
-nlp = Inferencer.load(model_name, task_type="question_answering")
-QA_input = [{"questions": ["Why is model conversion important?"],
-             "text": "The option to convert models between FARM and transformers gives freedom to the user and let people easily switch between frameworks."}]
-res = nlp.inference_from_dicts(dicts=QA_input, rest_api_schema=True)
-
-# b) Load model & tokenizer
-model = AdaptiveModel.convert_from_transformers(model_name, device="cpu", task_type="question_answering")
-tokenizer = Tokenizer.load(model_name)
 ```
+"exact": 78.69114798281817,
+"f1": 81.9198998536977,
 
-### In haystack
-For doing QA at scale (i.e. many docs instead of single paragraph), you can load the model also in [haystack](https://github.com/deepset-ai/haystack/):
-```python
-reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2")
-# or 
-reader = TransformersReader(model_name_or_path="deepset/roberta-base-squad2",tokenizer="deepset/roberta-base-squad2")
+"total": 11873,
+"HasAns_exact": 76.19770580296895,
+"HasAns_f1": 82.66446878592329,
+"HasAns_total": 5928,
+"NoAns_exact": 81.17746005046257,
+"NoAns_f1": 81.17746005046257,
+"NoAns_total": 5945
 ```
-
 
 ## Authors
-Branden Chan: `branden.chan [at] deepset.ai`
-Timo MÃ¶ller: `timo.moeller [at] deepset.ai`
-Malte Pietsch: `malte.pietsch [at] deepset.ai`
-Tanay Soni: `tanay.soni [at] deepset.ai`
-Michel Bartels: `michel.bartels [at] deepset.ai`
+**Branden Chan:** branden.chan@deepset.ai  
+**Timo Möller:** timo.moeller@deepset.ai  
+**Malte Pietsch:** malte.pietsch@deepset.ai  
+**Tanay Soni:** tanay.soni@deepset.ai  
+**Michel Bartels:** michel.bartels@deepset.ai
 
 ## About us
-![deepset logo](https://workablehr.s3.amazonaws.com/uploads/account/logo/476306/logo)
-We bring NLP to the industry via open source!  
-Our focus: Industry specific language models & large scale QA systems.  
-  
-Some of our work: 
+<div class="grid lg:grid-cols-2 gap-x-4 gap-y-3">
+    <div class="w-full h-40 object-cover mb-2 rounded-lg flex items-center justify-center">
+         <img alt="" src="https://huggingface.co/spaces/deepset/README/resolve/main/haystack-logo-colored.svg" class="w-40"/>
+     </div>
+    <div class="w-full h-40 object-cover mb-2 rounded-lg flex items-center justify-center">
+         <img alt="" src="https://huggingface.co/spaces/deepset/README/resolve/main/deepset-logo-colored.svg" class="w-40"/>
+     </div>
+</div>
+
+[deepset](http://deepset.ai/) is the company behind the open-source NLP framework [Haystack](https://haystack.deepset.ai/) which is designed to help you build production ready NLP systems that use: Question answering, summarization, ranking etc.
+
+
+Some of our other work: 
+- [Distilled roberta-base-squad2 (aka "tinyroberta-squad2")]([https://huggingface.co/deepset/tinyroberta-squad2)
 - [German BERT (aka "bert-base-german-cased")](https://deepset.ai/german-bert)
 - [GermanQuAD and GermanDPR datasets and models (aka "gelectra-base-germanquad", "gbert-base-germandpr")](https://deepset.ai/germanquad)
-- [FARM](https://github.com/deepset-ai/FARM)
-- [Haystack](https://github.com/deepset-ai/haystack/)
 
-Get in touch:
+## Get in touch and join the Haystack community
+
+<p>For more info on Haystack, visit our <strong><a href="https://github.com/deepset-ai/haystack">GitHub</a></strong> repo and <strong><a href="https://haystack.deepset.ai">Documentation</a></strong>. 
+
+We also have a <strong><a class="h-7" href="https://haystack.deepset.ai/community/join"><img alt="slack" class="h-7 inline-block m-0" style="margin: 0" src="https://huggingface.co/spaces/deepset/README/resolve/main/Slack_RGB.png"/>community open to everyone!</a></strong></p>
+
 [Twitter](https://twitter.com/deepset_ai) | [LinkedIn](https://www.linkedin.com/company/deepset-ai/) | [Slack](https://haystack.deepset.ai/community/join) | [GitHub Discussions](https://github.com/deepset-ai/haystack/discussions) | [Website](https://deepset.ai)
 
-By the way: [we're hiring!](http://www.deepset.ai/jobs) 
+By the way: [we're hiring!](http://www.deepset.ai/jobs)
