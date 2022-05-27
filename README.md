@@ -43,7 +43,7 @@ Secondly, we have performed task-specific distillation with [deepset/roberta-bas
 ## Usage
 
 ### In Haystack
-Haystack is an NLP framework by deepset. You can use this model in a Hasytack pipeline to do question answering at scale (over many documents). To load the model in [Haystack](https://github.com/deepset-ai/haystack/):
+Haystack is an NLP framework by deepset. You can use this model in a Haystack pipeline to do question answering at scale (over many documents). To load the model in [Haystack](https://github.com/deepset-ai/haystack/):
 
 ```python
 reader = FARMReader(model_name_or_path="deepset/tinyroberta-squad2")
