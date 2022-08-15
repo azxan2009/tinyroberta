@@ -135,8 +135,8 @@ Some of our other work:
 
 <p>For more info on Haystack, visit our <strong><a href="https://github.com/deepset-ai/haystack">GitHub</a></strong> repo and <strong><a href="https://haystack.deepset.ai">Documentation</a></strong>. 
 
-We also have a <strong><a class="h-7" href="https://haystack.deepset.ai/community/join"><img alt="slack" class="h-7 inline-block m-0" style="margin: 0" src="https://huggingface.co/spaces/deepset/README/resolve/main/Slack_RGB.png"/>community open to everyone!</a></strong></p>
+We also have a <strong><a class="h-7" href="https://haystack.deepset.ai/community/join">Discord community open to everyone!</a></strong></p>
 
-[Twitter](https://twitter.com/deepset_ai) | [LinkedIn](https://www.linkedin.com/company/deepset-ai/) | [Slack](https://haystack.deepset.ai/community/join) | [GitHub Discussions](https://github.com/deepset-ai/haystack/discussions) | [Website](https://deepset.ai)
+[Twitter](https://twitter.com/deepset_ai) | [LinkedIn](https://www.linkedin.com/company/deepset-ai/) | [Discord](https://haystack.deepset.ai/community/join) | [GitHub Discussions](https://github.com/deepset-ai/haystack/discussions) | [Website](https://deepset.ai)
 
 By the way: [we're hiring!](http://www.deepset.ai/jobs)
