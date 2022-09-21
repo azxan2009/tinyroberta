@@ -114,12 +114,13 @@ Evaluated on the SQuAD 2.0 dev set with the [official eval script](https://works
 **Michel Bartels:** michel.bartels@deepset.ai
 
 ## About us
+
 <div class="grid lg:grid-cols-2 gap-x-4 gap-y-3">
     <div class="w-full h-40 object-cover mb-2 rounded-lg flex items-center justify-center">
-         <img alt="" src="https://huggingface.co/spaces/deepset/README/resolve/main/haystack-logo-colored.svg" class="w-40"/>
+         <img alt="" src="https://raw.githubusercontent.com/deepset-ai/.github/main/deepset-logo-colored.png" class="w-40"/>
      </div>
-    <div class="w-full h-40 object-cover mb-2 rounded-lg flex items-center justify-center">
-         <img alt="" src="https://huggingface.co/spaces/deepset/README/resolve/main/deepset-logo-colored.svg" class="w-40"/>
+     <div class="w-full h-40 object-cover mb-2 rounded-lg flex items-center justify-center">
+         <img alt="" src="https://raw.githubusercontent.com/deepset-ai/.github/main/haystack-logo-colored.png" class="w-40"/>
      </div>
 </div>
 
