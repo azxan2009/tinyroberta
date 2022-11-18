@@ -35,7 +35,7 @@ This is the *distilled* version of the [deepset/roberta-base-squad2](https://hug
 **Downstream-task:** Extractive QA  
 **Training data:** SQuAD 2.0  
 **Eval data:** SQuAD 2.0  
-**Code:**  
+**Code:** See [an example QA pipeline on Haystack](https://haystack.deepset.ai/tutorials/first-qa-system)    
 **Infrastructure**: 4x Tesla v100
 
 ## Hyperparameters
@@ -134,10 +134,10 @@ Some of our other work:
 
 ## Get in touch and join the Haystack community
 
-<p>For more info on Haystack, visit our <strong><a href="https://github.com/deepset-ai/haystack">GitHub</a></strong> repo and <strong><a href="https://haystack.deepset.ai">Documentation</a></strong>. 
+<p>For more info on Haystack, visit our <strong><a href="https://github.com/deepset-ai/haystack">GitHub</a></strong> repo and <strong><a href="https://docs.haystack.deepset.ai">Documentation</a></strong>. 
 
 We also have a <strong><a class="h-7" href="https://haystack.deepset.ai/community/join">Discord community open to everyone!</a></strong></p>
 
-[Twitter](https://twitter.com/deepset_ai) | [LinkedIn](https://www.linkedin.com/company/deepset-ai/) | [Discord](https://haystack.deepset.ai/community/join) | [GitHub Discussions](https://github.com/deepset-ai/haystack/discussions) | [Website](https://deepset.ai)
+[Twitter](https://twitter.com/deepset_ai) | [LinkedIn](https://www.linkedin.com/company/deepset-ai/) | [Discord](https://haystack.deepset.ai/community) | [GitHub Discussions](https://github.com/deepset-ai/haystack/discussions) | [Website](https://deepset.ai)
 
 By the way: [we're hiring!](http://www.deepset.ai/jobs)
