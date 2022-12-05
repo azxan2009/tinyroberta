@@ -1,8 +1,8 @@
 ---
 language: en
+license: cc-by-4.0
 datasets:
 - squad_v2
-license: cc-by-4.0
 model-index:
 - name: deepset/tinyroberta-squad2
   results:
@@ -15,14 +15,16 @@ model-index:
       config: squad_v2
       split: validation
     metrics:
-    - name: Exact Match
-      type: exact_match
+    - type: exact_match
       value: 78.8627
+      name: Exact Match
       verified: true
-    - name: F1
-      type: f1
+      verifyToken: eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJoYXNoIjoiNDNlZDU4ODAxMzY5NGFiMTMyZmQ1M2ZhZjMyODA1NmFlOGMxNzYxNTA4OGE5YTBkZWViZjBkNGQ2ZmMxZjVlMCIsInZlcnNpb24iOjF9.Wgu599r6TvgMLTrHlLMVAbUtKD_3b70iJ5QSeDQ-bRfUsVk6Sz9OsJCp47riHJVlmSYzcDj_z_3jTcUjCFFXBg
+    - type: f1
       value: 82.0355
+      name: F1
       verified: true
+      verifyToken: eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJoYXNoIjoiOTFkMzEzMWNiZDRhMGZlODhkYzcwZTZiMDFjZDg2YjllZmUzYWM5NTgwNGQ2NGYyMDk2ZGQwN2JmMTE5NTc3YiIsInZlcnNpb24iOjF9.ChgaYpuRHd5WeDFjtiAHUyczxtoOD_M5WR8834jtbf7wXhdGOnZKdZ1KclmhoI5NuAGc1NptX-G0zQ5FTHEcBA
 ---
 
 # tinyroberta-squad2
